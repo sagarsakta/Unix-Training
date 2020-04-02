@@ -1,0 +1,23 @@
+8.6 Wait and Waitpid Function
+
+After the completion of process when it terminates(either normally or abnormally) the kernel sends SIGCHLD signal to the parent.The child process termination is asynchronous  i.e, it can happen at any time even if the parent process is running.There are two choices for parent process for this child process either it can ignore thi signal or it can provide a function that is called when signal occurs by default the signal is ignored .
+
+Different action can be performed when a process calls wait or waitpid function
+a.a process that calls wait or waitpid can block, if all of its children are still running.
+b. a process that calls wait or waitpid can return immediately with the termination status of a child.
+c.a process that calls wait or waitpid can return immediately with the error,if it doesn't have child process.
+
+Differences between wait and waitpid function:
+1.The wait function can block the caller until a child process terminates,whereas waitpid function prevent itself from blocking.
+2.The waitpid function doesn't wait for the child which have to terminate,it has a option that controls every process.
+
+8.7 waitid Functions
+
+For increasing the flexiblity UNIX specification add another function to retrieve the exit status of any process.It allows a process to specify which children to wait and two seperate arguements are used.The id parameter is interpreted based on the value of its idtype.
+
+
+8.8 Wait3 and wait4 functions
+
+Now two additional functions are implemented by UNIX specification.The feature provided by these functions is that ,it allows the kernel to return a summary of the terminated process and all its child process which are mot provided by wait,waitpid and waitid functions.
+
+
