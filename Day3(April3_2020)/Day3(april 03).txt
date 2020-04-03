@@ -1,0 +1,38 @@
+8.9 Race Conditions
+
+It is a condition which occurs when more than one process are trying to access the shared data and their outcome will depend in the order in which they will run. In general, we can't predict which process is running first.
+
+8.10 exec Functions
+
+  We know that fork functions can be used to create a new process then causes another program to be executed by calling any exec functions.When the exec function called the process is replaced by the new program and that program starts executing.Exec only changes its text,data,heap and stack ,it does not change the process ID because a new process is not created.
+
+There are seven exec functions but we are simply refer them as a exec function only for icreasing the flexiblity.We can initiate new programs with the exec functions.The two other functions exit and wait functions are used to handle termination and waiting for termination. 
+ 
+After implementing exec functions some new program inherits additional properties from the calling process:
+a. Process ID and parent process ID
+b. Real user ID and real group ID
+c. Supplementary group IDs
+d. Process group ID
+e. Session ID
+f. Controlling terminal
+g. Time left until alarm clock
+h. Current working directory
+i. Root directory
+j. File mode creation mask
+k. File locks
+l. Process signal mask
+m. Pending signals
+n. Resource limits
+o. Nice value
+p. Values for tms_utime,tms_stime 
+
+8.11 Changing User IDs and Group IDs
+
+Suppose any process is running and that prorocess want some other previleges which are not currently available then they need to change their user or group ID that has resource acess.Likewise , when program need to lower the previleges or prevent access to any resource they change the user or group ID.
+
+seteuid and setegid Function
+These functions are similar as setuid and setgid but only the effective user ID or effectively group ID is changed.
+
+
+
+
