@@ -1,0 +1,26 @@
+8.12 Interpreter Files
+
+These Files are test files that begin with a line of the form.The most common of these interpreter files begin with the line #!/bin/sh.
+The file that gets executed by the kernel is not the interpreter file, the file which is specified by the pathname on the first line is the interpreter file.
+
+Difference between interpreter file and interpreter
+a text file that begins with #! is called as interpreter file whereas the interpreter which is specified by the pathname on the first line of the interpreter file.
+
+8.13 System Function
+ 
+Suppose we want to put a timestamp on any file we use time to get the current calender time then call localtime to convert it to a broken-down time, then call strftime to format the result, and finally we write the result. So, to regularise it we can simply write system("date > file");
+It is defined by ISO C.
+
+8.14 Process Accounting
+
+Every time the process terminates Kernel writes an accounting to it.It includes small amount of binary data with the name of command,CPU Time user and group IDs.
+
+A function which enable and disable process accounting is 'acct'.It is defined in <sys/acct.h>.
+
+
+
+ 
+
+
+
+
