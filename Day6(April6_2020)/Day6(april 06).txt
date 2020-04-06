@@ -1,0 +1,22 @@
+8.15 User Identification
+
+In a program, sometimes we want to know the login name of the user along with its userID and groupID.So, we have one function as 'getlogin' .It is used when a single user has multiple login names with the same userID. However ,if their is a single entry of a user we can use 'getpwuid' function as well.
+
+8.16 Process Scheduling
+
+Kernel defines some policies and priorties for each and every process.The process can choose to run in lower priority by adjusting to its nice value.Normally , nice values are ranges from 0 to (2*NZERO)-1.Lower nice value will have higher scheduling priority.NZERO is the default nice value of the system.
+
+A process can retrieve and change its nice value by having nice function.The single process can adjust only to its own nice value it will not affect to other process.
+
+8.17 Process Times
+
+We know that any process can call the 'times' function to obtain these values for itself and any of its children.
+
+Q How to calculate wall clock time?
+Ans- When we call times function and save the return value.After some time, we call times function again and substract the earlier return value from the new return value.
+
+
+
+
+
+
