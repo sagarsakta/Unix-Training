@@ -1,0 +1,6 @@
+Exercises
+
+8.1Ans We assume that, in the vfork function by replacing the call to _exit function with exit might cause the standard output to be closed and printf will return -1. But, when we modify our program by implementing it again by replacing _exit with exit function and we found the same output with little modification in the value of 'processID'only .Glob and var values are same in both the case.
+
+
+8.5Ans In this , when we call execlp instead of execl specifying the pathname of the interpreter file. And the directory is /home/sar/bin was a path prefix then the output of the program comes 'execl errorwaitpid error'. 
