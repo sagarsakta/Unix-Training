@@ -1,0 +1,60 @@
+9.1 Introduction
+
+In this chapter we will implement the concept of sessions. We will look at the relationships between the login shell,it is invoked when we log in and the processes that we start from our login shell.
+
+So, to describe these relationships we have to study about signals and there are lot of concepts which should be known for understanding those signals.
+
+
+9.2 Terminal Logins
+
+In the early years,users were used to logged in with dumb terminals that were connected to the host with hard-wired connections.Either the terminals were local or remote.In both cases, these logins came through a terminal device in the kernel.
+
+Nowadays, several platforms allow us to start a windowing systems.We will use the procedure for log in to a UNIX system using a terminal.The procedure is regardless of the type of terminal it could be a character based or graphical .
+
+Several Terminals logins are present as follows:
+
+a.BSD Terminal Logins
+
+In this procedure, system administrator creates a file which has a one line per terminal device. 
+Example- When we bootstrap system,the kernel creates process ID 1, init process .The init process will read the file for every terminal that allow log in. Then,implement fork function and exec function.
+
+b.Mac OS X Terminal Logins
+
+It follows the same step like BSD Terminal Logins with small differences like, 'launched' is used in place of 'init'.
+We will use graphical based log in ,in this case.
+
+c.Linux Terminal Logins
+
+It is also similar to BSD login or we can say Linux login command is derived from BSD login command.The difference in these two logins is terminal configured specification.
+
+d.Solaris Terminal Logins
+
+It supports two forms of terminal logins one is getty which is used for BSD and other  is ttymon ,used for other terminal logins.
+
+ 
+9.3 Network Logins
+
+It is a procedure of logging into the system through a network means connection between the terminal and the computer
+point to point.
+
+There are several Network Logins are described:
+
+a.BSD Network Logins
+
+In this Network Logins, a single process waits for most number of network connections which is called Internet superserver process.
+
+b.Mac OS X Network Logins
+
+This procedure of Mac OS X is similar to BSD system because Mac OS X is based partially on BSD.
+
+c.Linux Network Logins
+
+ This procedure is same as same as BSD systems having some differences using inetd process called extended Internet service daemon.
+
+d.Solaris Network Logins
+
+This procedure of Network Login is same as BSD Systems but except that the Solaris version runs as a restarter in the Service Management Facility. 
+
+
+ 
+
