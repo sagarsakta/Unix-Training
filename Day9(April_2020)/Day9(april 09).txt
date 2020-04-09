@@ -1,0 +1,20 @@
+9.4 Process Groups
+
+Every Process we are running on a system belong to any process group.Process groups recieve signals from the same terminal.It has a process ID having positive integer value .
+
+The function which is used to return process ID is 'getpgrp' function.
+
+Every process group have a process group leader.Leader will be identified by its process group ID.The process leader can create process and then can terminate it also this duration is knowns as process group lifetime.
+
+There is a function by which new process can join the existing process known as 'setgpid'. 
+
+
+9.5 Sessions 
+
+When we talk about session ,it is a collection of one or more process groups.A single session  have multiple process group along with login shell. 
+
+There is a shell pipeline which is used to place the process in a process group.
+
+If the process which is calling is not by process leader is called by 'setsid' function.
+
+                                                                                                                                                                                                                          
