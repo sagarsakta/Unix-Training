@@ -1,0 +1,20 @@
+9.6 Controlling Terminal
+
+It is a terminal device in which we are log in for running our process in a single session. There is one controlling process which is created by session leader.
+
+If any session has a controlling terminal, it comes under foreground process group and all other process groups are background process groups.When ,for some time the program wants to talk with thecontrol terminal it opens the file /dev/tty.If any program do not have controlling terminal the device will fail to open.
+
+
+9.7 tcgetpgrp Function
+
+It is a function returns the process ID of the process group. We use this function because we tell the kernel that which process is foreground process group.
+
+b.tcsetpgrp Function
+
+It can also be called to set the foreground process group ID if the process has a controlling terminal.
+
+c.tcgetsid Function
+
+The tcgetpgrp Function and tcsetpgrp Function can't be called by many applications directly.So,the tcgetsid function  can get the process group ID .
+
+
