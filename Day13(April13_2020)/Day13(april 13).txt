@@ -1,0 +1,29 @@
+9.10 Orphaned Process Groups
+
+We know that a process is called as orphand when its parent process is terminates.
+
+The creation of orphaned process group has several processes and functions,when we implement fork function:
+
+a.The parent process sleeps for 5 seconds.
+b.The child establishes a signal handler.
+c.The child sends stop signal for itself.
+d. Child's parent process ID becomes 1 when the child is orphaned.
+
+
+9.11 FreeBSD Implementation
+
+Now, in this part we will talk about some features and implementations used by BSD.There is a structure which is labelled for every session.Some of its fields are-
+
+a.a_count-number of process groups in single session.
+b.a_leader- a type of pointer to the structure.
+c.a_ttyvp- a type of pointer to the vnode.
+d. s_sid- it is a session id.
+
+The structure contains following information about any process.
+a.p_pid- It contains process ID.
+b.p_pptr- pointer to the structure.
+c.p_pgrp- points to the structure to which process belong.
+
+
+
+
