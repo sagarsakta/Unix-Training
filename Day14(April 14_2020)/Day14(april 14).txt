@@ -1,0 +1,17 @@
+9.11 FreeBSD Implementation Continued......
+
+tty Structure:
+
+a.t_session- It is a that field which points to the session structure which has terminal as its controlling terminal.
+
+b.t_pgrp- It is a field which is used by terminal driver to send signals.
+
+c.t_termios-It is a field which contains all the special characters of the terminal.
+
+d.t_winsize- It is a field which contains the current size of the terminal.
+
+Exercises-
+
+9.1Ans- The logout records written by init process because it is a parent of all Linux processes. It is a first process to start when a computer restart or boots up and runs until the system shuts down. 
+
+
