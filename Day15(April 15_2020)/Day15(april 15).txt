@@ -1,0 +1,23 @@
+10.1 Introduction
+
+In the advance programming of UNIX environment Signals are related to interrupts.They can provide a way of handling asynchronous events.There are several types of signals and in this chapter we will describe which signal is used for which purpose.
+
+10.2 Signal Concepts
+
+All signals which are available in the UNIX environment are begin with three special characters 'SIG'.
+
+Signal names are defined by positive integer constants and under header file <signal.h>.It's nvalue will never be 0.
+
+Several Conditions can generate signals:
+
+a.Terminal generated Signals- When user press the Delete key on the terminal.It is also used to stop the runaway programs.
+
+b.Hardware exceptions generate signals- It refers to wrong memory reference or we can say divide by 0 interrupt. SIGSEGV signal is used for executing an invalid memory refrence.
+
+c.Software can generate signals-When process have to handle various asynchronous events like when alarm clock expires, when there is a issue regarding network .
+
+d. kill(1)- It is a function which allows us to send signals to other processes.
+
+e. kill(2)- It is a function which allows a process to send any signal to another process group.But we have to be a owner or superuser of the process.  
+
+
