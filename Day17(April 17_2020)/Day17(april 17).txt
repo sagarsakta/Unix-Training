@@ -1,0 +1,17 @@
+10.5 Interrupted System Calls
+
+In several cases system call returned an error if a process caught a signal by that the process entered to a slow system call.Then, system call returns a errorno EINTR.
+
+The system calls are divided into two categories:
+a.slow system calls- These are the system calls which can block for forever.
+b.Other system calls
+
+
+10.6 Reentrant Functions
+
+The functions which are safe to call from within a single handler only.These functions can be called as a Reentrant Functions.These functions can block any signal during the operations as well. 
+
+
+10.7 SIGCLD Semantics
+
+The name SIGCLD is defined in the System and have different semantics from that BSD signal which is known as SIGHLD. Tis SIGHLD signal is similar to all other signals because when the signal will occur the status of child will change and wait function will be called. 
