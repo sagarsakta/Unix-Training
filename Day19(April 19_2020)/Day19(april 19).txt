@@ -1,0 +1,28 @@
+10.8 Reliable-Signal Terminology and Semantics
+
+When an event causes signal occurs then a signal is generated for a process .Event means like hardware exception, software condition.
+When certain actions are taken for signal we can say that signal is delievered to a process.Process can block the delivery of signal.
+
+10.9 Kill and raise Functions
+
+Kill function is used to send a signal to a process.
+Raise function allows a process to send a signal to itself.
+ 
+Signal number 0 is called as null signal.If signo arguement is considered as 0 then error checking is performed by kill. If we send the process the null signal and if does not exist kill will return -1.
+
+There can be four different conditions for pid arguement in the kill function:
+a.pid>0 - the signal sent to that process whose process ID is pid.
+
+b.pid==0 - the signal is sent to that processes whose process ID is equal to the group ID of sender.
+
+c.pid<0 - the signal is sent to that process whose process ID equals the absolute value of pid.
+
+d. pid==-1- the signal is sent to that processes for which sender has permission to send signal.
+
+
+
+ 
+
+
+
+
