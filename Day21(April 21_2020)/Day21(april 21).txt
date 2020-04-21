@@ -1,0 +1,13 @@
+10.12 sigprocmask Function
+
+It is a function which is used to change the signal mask and examine its mask and both operations can be done simultaenously using this function.
+
+There are three arguements which are passed :
+a.how-it indicates how the current signal is modified.
+b.set- it can be either a non-null pointer or null pointer.
+c.oset-if it is non-null pointer signal mask will returned through oset.
+
+
+10.13 sigpending Function
+
+It is a function which is used to return the set of signals which are pending from delievery.
