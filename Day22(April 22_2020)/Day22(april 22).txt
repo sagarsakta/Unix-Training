@@ -1,0 +1,18 @@
+10.14 sigaction Function
+
+It is a function which can examine as well as modify the action of any signal.
+
+There are three arguements used in the function:
+a. signo- it is a signal number.
+b. act- it is a pointer ,if it is non null it means we are modifying the signal action.
+c. oact- it is a pointer ,if it is non null , it will return return the previous action which is taken for signal.
+
+10.15 sigsetjmp and siglongjmp Functions
+
+The difference between these functions is that sigsetjmp has its additional arguement.
+
+The longjmp function is called when a signal handler has to be returned.
+
+
+
+
