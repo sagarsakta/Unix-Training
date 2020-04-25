@@ -1,0 +1,26 @@
+10.20 sigqueue Function
+
+It is a function which is used to queuing signals. To use queued signal we have to do some operations:
+a. We will specify SA_SIGINFO flag when we have a signal handler.
+
+b. Instead of using usual SA_HANDLER we will provide signal handler in a SA_SIGACTION member of sigaction structure.
+
+c. Using the sigqueue function to send signals.
+
+
+10.21 Job-Control Signals
+
+There are six job control signals are present-
+1. SIGCHLD- means child process has been stopped.
+2. SIGCONT- means continue the process if it is stopped.
+3  SIGSTOP- means stop the signal.
+4. SIGTSTP- means Interactive stop signal.
+5. SIGTTIN- means read from controlling terminal.
+6. SIGTTOU- means write to controlling terminal.
+
+
+10.22 Signal Names and Numbers
+
+We will learn how to map Signal name with numbers.Suppose we have an array extern char *sys_siglist[]; . So,the array index is the signal number , which is used to give a pointer to the character string.
+
+For printing the character string we can use psignal function.
