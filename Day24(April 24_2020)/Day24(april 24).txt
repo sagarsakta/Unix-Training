@@ -1,0 +1,17 @@
+10.18 System Function
+
+When ed editor terminates ,the SIGCHLD signal is sent to the parent by the system.It is catched by the user and returns from signal handler.Now, if SIGCHLD signal is catched by the child so it should also catch by the parent as it has created its own children.
+
+The delivery of signal directly to the parent should be blocked while this system function is running on the way.Because, the child created by system will terminate, it will wrongly presume that one of its child is terminated.
+
+That's why one of the wait function is neccessarily used to take the status of termination of the child.
+
+
+10.19 sleep, nanosleep and Clock_nanosleep Functions
+
+This Function cause the process to be suspended until in two ways:
+a. The given  wall clock  time has been elasped.
+b. Signal is caught by process and signal handler returns.
+
+There is a alarm signal which return may occur at a time later than requested time because of its other activities.
+

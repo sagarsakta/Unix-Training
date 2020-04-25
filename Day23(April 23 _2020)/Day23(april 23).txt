@@ -1,0 +1,10 @@
+10.16 sigsuspend Function
+
+It is a function which is used to restore the signal mask and make the process into sleep in one single operation.Signal mask is set to that value which is pointed by sigmask.The process is suspended until a signal terminates the whole process.
+
+If a signal handler returns,then signal mask of process is set to its original value before the call to sigsuspend.
+
+
+10.17 abort Function
+
+It is a function which sends the SIGABRT signal. This signal cannot be ignore by the process.There will be a unsuccessful termination when abort function will be delivered.If the process will not terminate itself from signal handler then abort will terminates the process.
