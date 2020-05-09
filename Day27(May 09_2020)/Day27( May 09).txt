@@ -1,0 +1,83 @@
+11.5 Thread Termination
+
+If any thread calls the exit functions like exit,_exit,_Exit then the process will terminates.
+Thread can exit in three ways by stopping its execution and without its process termination.
+1.Its return value is the threads exit code.
+2.it can be cancelled by another thread.
+3. it can call pthread_exit. 
+
+
+11.6 Thread Synchronization
+
+When one thread can modify a variable that other threads can read or modify,we need to synchronize the threads. When this happens other threads can lead to consistencies when anyone reads the value of that varaiable.
+
+11.6.1 Mutexes
+
+ There are several interfaces which include the protection of data and determines that it is used by one thread at a time . It is basically a lock we set before accessing a resource.If multiple thread are blocked when we unlock our mutex than all threads blocked will be runnable.
+
+
+11.6.2 Deadlock Avoidance
+
+This condition may occur when when we hold a mutex and block it while trying to lock a second mutex at a same time and that another thread holding the second mutex tries to lock the first mutex.We can control the Deadlock by controlling the order of locked mutexes.
+
+
+11.6.3 pthread_mutex_timedlock Function
+
+This function is like pthread_mutex_lock and if the timed out value is reached it will return the error code.It specifies how long we have to wait i.e it bound the time when mutex is trying to aquire is locked.
+
+
+11.6.4 Reader-Writer Locks
+
+They are similar to mutexes,but have some exception.There are three states with reader-writer lock :
+1. Locked in read mode
+2.Locked in write mode
+3. Unlocked mode.
+One thread at a time can hold reader-writer lockin write mode, but more than one thread can hold a reader-writer lock in read mode.
+
+
+11.6.5 Reader-Writer Locking with Timeouts
+
+There are mainly two functions pthread_rwlock_timedrdlock and pthread_rwlock_timedwrlock. These functions are the way to avoid blocking while acquiring a reder-writer lock.
+
+
+11.6.6 Condition Variables
+
+It is a another method of synchronization to threads.They allow threads to wait when any arbitrary conditions has occured during the process. This condition variables is related to a mutex.Thread must first lock the mutex to chnage the condition state.It is initialized before implementation.It is represented by pthread_cond_t data type.
+
+
+11.6.7 Spin Locks
+
+It is same as mutex but the blocking is done by busy-waiting.It is used  for short period of time.Most of the time they are efficient but some time they can lead to CPU wastage.They are useful only when they are used in real time scheduling class.Initialization of spin lock is done by pthread_spin_int function and to destroy it we can use pthread_spin_destroy function.
+
+
+11.6.8 Barriers
+
+They are used to coordinate with multiple threads in a same time.It allow each and every thread to cooperate all threads until all reached the same point.The pthread_join function is known as the barrier.We can use the pthread_barrier_init function to initialize and use pthread_barrier_destroy function to destroy it.
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+EXERCISES
+
+10.1 - After removing for(;;) ,it will not run and stop and will catch the signal only one time.
+
+10.3 
+1.main
+2.sleep
+3.sig_int
+4sig_alrm
+
+10.4 If alarm function notify first before set-jmp it is not efficient. If program is complex only then we can use alarm function before set_jmp.
+
+
+10.8 Real user id have a lot of attributes inside it while effective id is only for the user.
+
+

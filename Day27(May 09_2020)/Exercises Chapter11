@@ -1,0 +1,9 @@
+Exercises
+
+11.1 We will make the structure dynamically to pass between threads.
+
+11.2 a. We can use job_find and job_remove for the job find and job remove.
+
+11.4 The first statement is suitable .Because thread will catch another option when its available without any delay.
+
+11.5 pthread_join function acts as a barrier to allow one thread to wait until another one exists.

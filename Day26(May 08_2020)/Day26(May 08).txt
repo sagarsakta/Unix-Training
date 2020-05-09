@@ -1,0 +1,29 @@
+11.1 Introduction
+
+In this chapter we will see use of thread of performing several tasks in a single environment process.
+In a single process all threads will acess to the same process compnents. The main purpose of running a single process resource with multiple users is for the consistency.
+
+
+11.2 Thread Concepts
+
+It has a simpe meaning that we know that the process is doing only one thing at a particluar time but with multiple thread of control we can perform more than one thing at a time in a single process.
+Our Program is simplified using threads regardless of the number of processor.Thread contains ThreadID (which identify the thread within a process),register values,stack. 
+There are some interfaces in thread known as pthreads.
+
+
+11.3 Thread Identification
+
+We can identify the thread by its thread ID. It belongs to that process which is  currently running and that processID is non negative integer.
+Thread ID is denoted by pthread_t data type.It is used to print the threadID during debugging.
+
+It can also achieve its own threadID by calling pthread_self function.It is very useful when we have to identify our data structures.
+
+
+11.4 Thread Creation
+
+Threads are created using the pthead_create function.The memory is pointed out by tidp is set to threadID when this pthread_create returns.attr arguement is used to customize thread attributes.
+
+Thread runs on a start_rtn function.But,when we call the thread there is no surity is which thread will run , calling one or newly created thread.
+
+
+
