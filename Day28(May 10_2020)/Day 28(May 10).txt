@@ -1,0 +1,56 @@
+12.1 Introduction
+
+This chapter will define the behaviour of threads and determines how to control it.Several attributes of thread are defined in this chapter.We will see how to keep data private in a single process.
+
+
+12.2 Thread Limits
+
+UNIX specifies some limits to thread . Thread limits can be queried using the function sysconf.This function is used to enhance the process portablity during the implementations.
+
+
+11.3  Thread Attributes
+
+There are several functions which are used in the management of these attributes by following some pattern.
+a.Object is associated with its own type of attribute object.
+b.One initialization function exits for default values.
+c.Another function used to destroy the attribute object.
+d.Another function to get the value of attribute from attribute object.
+e.Another function to paas the value as an arguement.
+
+
+11.4 Synchronization Attributes
+
+As we studied about the synchronization so there are some attributes of mutexes, condition variables, barriers,reader-writer locks.
+
+12.4.1 Mutex Attribute
+
+They are represented by pthread_mutexattr_t structure.It is initialized by pthread_mutexattr_init function and use pthread_mutexattr_destroy to deinitialize it.There are three attibutes process-shared attribute, the robust attribute,and the type attribute.
+
+12.4.2 Reader-Writer Lock Attributes
+
+It is also having some attribute like pthread_rwlockattr_init function to initalize a structure and pthread_rwlockattr_destroy function to deinitialize it.The attribute named process-shared attribute is supported for reader-writer locks.
+
+12.4.3 Condition Variable Attributes
+
+There are two different attributes for this condition variables one is process-shared attribute and another one is clock attribute.
+The current value of process-shared attribute is measured by pthread_condattr_getpshared function. 
+The clock attribute will control that which clock is used when processing the timeout of the pthread_cond_timedwait function. 
+
+
+12.4.4 Barrier Attributes
+
+There is only one attribute for barrier is process-shared attribute.It also have pthread_barrierattr_init function to initialize a barrier and pthread_barrierattr_destroy function to deinitialize is object.
+
+
+12.5 Reentrancy
+
+We have dicussed about several functions so if any function is reentrant with respect to the multiple threads, than we can say that it is thread-safe.We can also say that if a function can be safely called by multiple threads at a same time ,that function is a thread-safe.
+
+
+
+
+
+
+
+
+ 
