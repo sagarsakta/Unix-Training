@@ -1,0 +1,58 @@
+12.6 Thread-Specific Data
+
+It is a method of finding a data which is associated or related to thread.We can also called it a thread-private data.It is known as private data as we had each thread to access its own seperate copy of data.
+
+There are several reasons that why should we have thread private data 
+a. We should have a record of every data on the basis of per thread.
+
+b. For adapting the process based interface environment.
+
+
+12.7 Cancel Options
+
+There are several attributes which are not included in the structure.These attributes are cancelability state and cancelability type.
+These are the attributes which affect the behaviour of threads. 
+
+Cancelability state attribute use the pthread_cancel_eneable by default .When the state is set to pthread_cancel_disable then pthread_cancel will not kill the thread.
+
+ 
+12.8 Thread and Signals
+
+Each thread has its own signal mask.Thread can block signals but wif any thread will modify the change of the signal then that modification will be share the action.
+
+We use pthread_sigmask function which works with thread and returns the error if failure has come.
+
+
+12.9 Threads and Fork
+
+When a thread processsed with the fork , entire process is saved for the child. As we know, inside the child process only one thread is there and that is made from a copy of thread.
+There are several locks concept for the better consistent implement of fork.There are mainly three functions or handler which helps us to deal with locks:
+
+a. The prepare fork handler.
+b.The parent fork handler.
+c. The child fork handler.
+
+12.10 Threads and I/O
+
+There are several functions which are helpful in a multithreaded environment.As all thread share same file descriptors we have some functions like pread and pwrite to make the multithreaded environment.
+
+
+Exercises
+
+12.1 After the execution the code of output is buffering.
+
+12.2 Signal is not safe because of some functions which we are using.
+
+12.5 We will still need fork as fork made the program totally different and makes the processing different for every thread.
+
+12.7 Yes, both initialization and destroy process have different spaces to store it.
+
+12.8 In the figure it can be simplified as it can be converted to amount of time until that absolute time.
+
+
+
+
+
+
+
+
