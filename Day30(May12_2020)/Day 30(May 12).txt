@@ -1,0 +1,29 @@
+13.1 Introduction to Daemon Processes
+
+These are the processes which are live for a longer time.It starts when system is bootstraped and ends when system will shut down.It does not have a controlling terminal and we will see how can daemon can report error condition.
+
+
+13.2 Daemon Characterestics
+
+1. The jdb dameon helps the journal.
+2.The flush daemon flushes out dirty pages.
+3.The kswapd daemon is used for the pageout.
+4.The sync_supers daemon also flushes the system but periodically.
+
+
+13.3 Coding Rules
+
+1.It calls umask to set the file mode usually it will set the creation to 0.
+2.It calls fork for the different mode of connections in the thread and have the parent exit.
+3. It calls setid function to create a new session.
+4.It also changes the present working directory to the root directory.
+5. The file descriptors which are not being used are closed.
+
+
+13.4 Error Logging
+
+Since Daemon processes does not have the controlling terminal so it faces problem while handling error messages so there are  several ways to generate log messages in daemon process.
+a.There are log functions which is used by the kernel.
+b.There is syslog function which is used by daemon process.
+c.Some TCP and UDP network protocols are used to generate the log messages.A user process on his host network and the other user on the other host network can send log messages.
+
