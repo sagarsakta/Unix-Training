@@ -1,0 +1,31 @@
+13.5 Single-Instance Daemons
+
+It is a type of daemon which is used when only one daemon should be run.If multiple instances were running each copy of daemon start its operation which are declared as a duplicate operation and reffered as an error.
+
+
+13.6 Daemon Conventions
+
+a.The lock file of daemon is stored in /var/run. The name will be reffered as name.pid(name is the name of daemon).
+
+b.The configuration options of daemon are stored in /etc. It is named as name.conf.
+
+c.Daemons are started with /etc/rc*. 
+
+d.Daemon will read any file only when it starts and read only once.If the configuration will changes then daemon will need to be stopped.
+
+
+13.7 Client-Server Model
+
+This daemon process usually use as a server process.The server process works when client get interact to it for any type of service.In this model the communication of the client server is one way.
+
+
+Exercises
+
+13.1 It will not work because it is changing the root directory and if root directory is changing it will not run.
+
+13.3 
+a.migration -It distributes the processsing and implementations.
+b.systemd - It is used in the system with other operating systems.
+c.kthreadd - It is used to enhance the space of threads.
+
+
