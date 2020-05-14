@@ -1,0 +1,46 @@
+14.1 Introduction to Advance I/O
+
+In this chapter we will see various functions which are related to input output.We will also read  what are readv and writev functions.
+
+
+14.2 Nonblocking I/O
+
+We know there are two types of system calls one is slow and all others.The slow system calls can be blocked for forever.
+
+Issue of I/O operation comes under Nonblocking I/O like read,open and write and can't be blocked for forever.It returns an error message while the operation is not completed.
+
+We can specify Nonblocking Flag to get the file descriptor if the descriptor is already open we will call fcntl to see the status of file.
+
+
+14.3 Record Locking
+
+It is a that process which is used to define the process to prevent other processes from modifying while first process is modifying that portion of file.
+
+There are three rules for automatic inheritence and release of record locks.
+1.Locks will be associated with the file itself.
+2.Locks will always inherited in a parent process.
+3.Locks will be inherited in a new program across an exec.
+
+
+14.4 I/O Multiplexing
+
+It can be used when we read something in one descriptor and writes to the other descriptors.But if we want to read from both descriptors ,so we can't block read in any descriptor.
+
+14.4.1 select and pselect Functions
+
+select function is used to do I/O multiplexing .It is used to tell the kernel that which discriptor we want, which condition we want in each descriptor and how long we should wait for the operation.
+
+The pselect is same as select but there are various differences are used in context of time like a timespec structure is used in the pselect case and in select function timeout can be calculated by timeval structure.The value of timeout in pselect is constant.
+
+14.4.2 poll Function
+
+It is same as the select function  but the only difference  of interface.The array of pollfd structure is build for each conditions of readablity, writability and exception.
+ 
+
+
+
+
+
+
+
+
