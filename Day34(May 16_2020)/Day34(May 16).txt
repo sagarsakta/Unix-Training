@@ -1,0 +1,60 @@
+14.5 Asynchronus I/O
+
+These are the I/O which allows only one signal in use.They can't be work in all file types.If there are sevral file descriptor so we can't say signal will corresponds to which descriptor.
+It has a very complex design for every application.We can use this I/O by using multiple threads and allow the thread asynchronus to each other.
+
+
+14.5.1 System V Asynchronous I/O
+
+It is a that form of asynchronous I/O which works only with streams devices and streams pipe.It uses the signal SIGPOLL.
+In stream device we use the ioctl for calling having header file of stropts.h.
+
+14.5.2 BSD Asynchronous I/O
+
+It has a functionality of two signals SIGIO and SIGURG. For achieving SIGIO signal we approach towards several steps:
+a.We will establish one signal handler.
+b.We will set process ID to recieve signal.
+c. We will call fcntl for enabling it on the descriptor.
+For SIGURG we will perform only first two steps.
+
+14.5.3 POSIX Asynchronous I/O
+
+It provides a platform in which we use this Asynchronous I/O .It use several control block to define all its I/O operations.These control blocks are defined inside aiocb structure.
+
+
+14.6 readv and writev Functions
+
+readv function is used to order the unordered data into buffers.It fills the buffer one by one. The total number of bytes are return in this readv function. 0 will be returned if no further data is available.
+
+writev function is used to collect the output data from buffer .It will returns the total number of bytes in output, which is equal to the sum of all buffer lengths.
+
+
+14.7 readn and writen Functions
+
+These functions can be used for read and write N bytes of data, but these function returns a value not as same as requested it returns less values .They can call read and write function several number of times for the gathering of data.
+
+We can read to the file only when we know that we will recieve that much amount of bytes of file and we can call write function when we are writing to any file under our system.
+
+
+14.8 Memory -Mapped I/O
+
+It helps us to map the file on a hard disk into buffer for the sake of reading these bytes of file and we store data in the buffer so bytes can be written to the file.
+sys/mman.h header file is used for the mmap function which have the several arguements 
+1. addr- which defines the address where we want mapping.
+2. fd- it defines the file that is to be mapped.
+3.len- which defines the number of arguements to be mapped.
+4.off- It is a starting offset in the file.
+5.prot- which defines the protection of mapped region.
+
+
+
+
+
+
+
+
+
+
+
+
+
