@@ -1,0 +1,23 @@
+Exercises
+
+14.1 If read lock is already implemented and write lock is in waiting then if we again want to implement read lock again while write lock is already waiting then it will never implement write lock in it and it will have the problem in its behaviour.
+
+
+14.3 We will use the #define sysmbol for handling the high amount of descriptors.
+
+14.6 We can implement these functionsusing record locking but the child should not have locks because parent id cannot wait for the child to unlock.
+
+
+14.7 The maximum capacity of a pipe is 65536 bytes.PIPE_BUF has the capacity of 4096 bytes. 
+
+
+14.8 While using asynchronous I/O, we will set is_pipe_or_tty to 0.We will stop the program for further processing.
+
+
+14.9 Break-even point describes that writev is faster in initial stages. It works faster and later it works slowly during the process.
+
+
+14.10 In a UNIX environment the last access time for the input can be updated in any file system .They are inbuilt and can be used in several platforms for the implementation.
+
+
+
