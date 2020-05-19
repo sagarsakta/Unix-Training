@@ -1,0 +1,46 @@
+15.1 Introduction to Interprocess Communication
+
+It is one of the technique which is used for the process to communicate with each other. It is called interprocess communication between processes on the same host. 
+The process can also communicate on other host in two forms which are socket and streams.
+
+
+15.2 Pipes
+
+It is a that form of interprocess communication which is used mostly in UNIX system.It is created by calling the pipe function.Half duplex pipes are mostly used pipes in UNIX system.In the structure of half duplex the left half of pipe describes the ends by which the pipe connected to a process.The right half describes the data part of the pipe.
+
+When one end of pipe is closed then if we want to read from a pipe whose write end has closed then read will return 0 which indicates end of the 
+file and data has been read.
+
+If we write to a pipe whose read end has closed one signal is generated at that time which is SIGPIPE.
+
+
+15.3 popen and pclose Functions
+
+These are the functions which are used to handle our operations of creating a pipe to the processes.
+The popen function use the fork and exec function to execute the process.
+The pclose function is used to close the I/O stream and returns the status of the shell.
+
+
+15.4 Coprocesses 
+
+Coprocess is nothing but a filter which is used to generate the input and read the filter output.It runs in a background and its input output are connected to a another process using pipe.
+
+
+15.5 FIFOs
+
+Pipes has another name called fifo. In this process unrelated process can also exchange data.Its path is exist in default file system.
+There are mainly two functions used to create FIFO
+1. mkfifo
+2. mkfifoat
+We can use fifo in several ways.
+a. They can be used by shell commands to exchange data.
+b. Used in client-server applications to exchange data.
+
+
+
+
+
+
+
+
+
