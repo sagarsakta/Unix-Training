@@ -1,0 +1,110 @@
+15.6 XSI IPC
+
+There are three types of XSI IPC which are-
+1. message queues
+2. semaphores
+3. shared memory
+
+15.6.1 Identifiers and Keys
+
+There is one non negative identifier which is used to specify the the interprocess communication.For fetching or retrieving a message we should always know the identifier of the queue.It can also be called as IPC object.
+
+When this structure is being created there should be a key which must be specified.key_t is a data type of the key which is defined in primitive system data type.
+
+
+15.6.2 Permission Structure
+
+It defines the permission which is included with the various ids and modes like-
+a. uid- effective user id of owner
+b.gid- effective group id of owner
+c. cuid- effective user id of creator
+d. cgid- effective group id of creator
+e. mode- access mode
+
+
+15.6.3 Configuration Limits
+
+There are certain limits to these IPCs and they all can be changed by their reconfiguration.
+
+
+15.6.4 Advantages and Disadvantages
+
+Advantages
+1.They are very reliable in use.
+2.They are fully flow controlled.
+3.Their structure is record oriented.
+
+Disadvantages
+1.These IPCs do not have refrence count.
+2. These are not known by their names in the file system.
+3.We can't multiplexes I/O function with them.
+
+
+15.7 Message Queues
+
+It is a queue in which list of messages are stored in a kernel and they all are identified with an messsage queue identifier.Identifier commonly known as queue Id .
+
+A queue is created by msgget keyword and further addition of messages is done by msgsnd.It have three arguements-
+1.long integer type.
+2. non-negative length
+3. data bytes 
+All messages are fetched through msgrcv.
+
+
+15.8 Semaphores
+
+It is used to provide the access to a shared object for several processes.When any process is achieved its shared resource by semaphore then its value is incremented by 1.
+
+For the correct implementation there should be the atomic operation of it testing and its decrementation .Its common form is known as binary semaphore.Its value is initialized to 1.
+
+The total number of semaphores are called nsems.For every new addition of sets of semaphores it must specify nsems.The semctl functions are used to catch all operations of semaphores.
+
+
+15.9 Shared Memory
+
+It allow multiple processes  to share a certain memory region.Its working is fast as their is no complicated concept of client and server model for the copying of data .It only used synchronization concept for the access to a given region among several processes.
+
+There are certain members for the structure to be maintained -
+1. shm_perm- name of structure
+2. shm_segsz- size of segment
+3. shm_lpid- pid of last shmop
+4. shm_cpid- pid of creator
+5. shm_nattch- current attaches
+6. shm_atime- last attach time
+7. shm_dtime-last detach time
+8. shm_ctime-last change time
+
+
+15.10 POSIX Semaphores
+
+It is a mechanism which is created to find the address several deficiencies with the XSI semaphore interface.They are available in two modes-
+1. named- They are accessed by their name and are being used by the threads in any process .
+2. unnamed- It exist in memory and that process should have access to the memory if wants to use the semaphores.
+
+
+15.11 Client-Server Properties
+
+1. The relationship between these two like the client have the fork and exec is the desired server.
+2. Server which is executing set user-ID program.It also defines the real identity of client by the refrence of its real user ID.
+3.The server is a daemon process which is contacted using some form of its IPC by all clients.
+4.If the client-server -application sends data only from client to server, a FIFO will suffices that time.
+5.The server is a child of parent ,all the servers can do is pass back the contents of the file to the parent. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
