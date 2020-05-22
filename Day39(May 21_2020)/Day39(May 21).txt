@@ -1,0 +1,30 @@
+Exercises
+
+15.1 The reader will never get end of file and just block because if we close the write end it sends end of file.
+
+
+15.2 Nothing will happen as parent does not wait for the child to terminate .If child terminates without reading the message nothing will be modify.
+
+
+15.4 If we will remove the signal handler from the program then the status of termination of program will not change.
+
+
+15.6 Use of wait is more complicated then waitpid .System calls will trigger for some time and call wait again after some time. When wait currently blocked in system will again trigger and exits from the system. That's why waitpid should be used instead of wait.
+
+
+15.8 It will directly redirect to the paents standard error because we have to go back to the parent whenever any error message comes out.
+
+
+15.9 The value which is returned by cmdstring is shown.
+
+
+15.10 For reading and writing without blocking we have to open the non blocking read . and open it twice for reading and writing both.
+
+
+15.11 If malicious file has been reads a message from message queue then it will interrupt the execution of clients program because the message is already become malicious and does not exist on the queue.
+
+
+15.13  We will use record locking concept, semaphores and mutexes.And linked list will  be access only after it is fully built.
+
+
+ 
