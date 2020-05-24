@@ -1,0 +1,78 @@
+16.1 Introduction to Sockets
+
+It is a mechanism which allow processes to run on a different systems to communicate with each other.We will define the interface which is used regardless of same system or different system.This interface use many different network protocols. The overview of this socket API will be defined in this chapter.
+
+
+16.2 Socket Descriptors
+
+For accessing the socket ,every application use socket descriptors . They are also implemented as file descriptors.So, all functions which are used in file descriptors can be used here. 
+
+The header file is used sys/socket.h and we will call the socket function to create the socket. 
+Several protocols which are defined for the domain sockets.
+1.IPv4 Internet protocol
+2.IPv6 Internet Protocol 
+3.Internet control Message protocol
+4. Raw IP packets protocol.
+5. Transmission Control Protocol
+6. User Datagram Protocol
+
+
+16.3 Adressing
+
+It is use to adress the process with which we wish to communicate. This can be adressed by the network protocols . 
+
+16.3.1 Byte Ordering
+
+It is used when we implement  a process in different systems. It defines how bytes are ordered in a large data types.
+
+The highest byte  address occurs in the least significant bit(LSB) and it is defined in big-endian byte order.
+The highest byte address occurs in the opposite of least significant bit in the little-endian byte order.
+Most significant bit will always on the left side and least significant bit is always on the right side.
+
+
+16.3.2 Address Formats
+
+It is specified to a particular domain for increasing the flexiblity of a socket. So, every format can be easily paased to the socket functions. It has a sockaddr address structure.
+
+
+16.3.3 Address Lookup
+
+In this procedure the network configuration information concept is used. In this,information is kept in static files, or by name service.
+The header file used in this configuration is netdb.h. by calling the gethostent.
+
+
+16.3.4 Associating Adresses with Socket
+
+For the client prospective system can choose the default address for us , but for the servers prospective we need to associate a address in a socket of server . We will find that address of server when it will interact with the client.
+
+One bind function to associate an address in a socket with a header file sys/socket.h.
+
+
+16.4 Connection Establishment
+
+Since, we are working on a connection-oriented service ,the estalbishment of connection is necessary for the message passing. So, there is connect function which is used to create a connection in sockets.
+
+The address of server is to be specified in a connection process with which we have to interact.The connection request can be failed sometimes for any reasons.
+
+
+16.5 Data Transfer
+
+We can exchange the data using read and write as we studied we can use read and write to communicate with a socket.There are six functions in which three are  used to sending data and three are for recieving data.
+
+The Functions used for sending data-
+a.send- it allows flag to change how the data should be transmited.
+b.sendto- It allows us to specify the destination address.
+c.sendmsg- which specify mutiple buffers from which to transfer data.
+
+The functions used for recieving data-
+a. recv- It allows us to specify some options to recieve data.
+
+
+
+
+
+ 
+
+
+ 
+
