@@ -1,0 +1,37 @@
+16.6 Socket Options
+
+There are two socket option interface which are used to control the socket behaviour. One is allow to set a option and another is used to allow to query the state of option. 
+
+There can be three kind of options which can get and set-
+1. Generic option which work with all socket types.
+2. That options which are managed in socket level.
+3. Options related which are protocol-specified.
+
+
+16.7 Out-of-Band Data
+
+It is a that feature which is supported by communication protocols. It is a feature which is sent firstly before any data transmission.There are several network protocols which supports this Out-of-Band Data like TCP supports this Out-of-Band data but UDP doesn't.
+
+TCP refers this Out-of-Band data as urgent data.It transmits single byte of data.There is one flag which is used to generate the urgent data which is MSG_OOB. When we sent more than one byte the last byte will considered as a urgent data byte.
+
+
+16.8 Nonblocking and Asynchronous I/O
+
+Since, we studied about send and recieve functions we know that send functions will block when there is no space in the socket queue and recieve functions can also be block when no data is available to recieve.
+
+But in Nonblocking mode, the function will not block only get a failed message then we can use select or poll to determine whether we can send or receive the data.
+
+Sockets have a way to define the asynchronous I/O. We can use the SIGIO signal when we get the data to read . For enabling a asynchronous I/O mechanism  there are 2 steps-
+1. Establish socket ownership
+2. Inform the socket that we want it to signal us.
+
+
+Exercises
+
+16.2 There are not much difference in output when we are working in sockets . So, we can same relate the stat structure in this socket.
+
+16.5 Since, the daemon concept is applied and when we execute the program the code will show nothing in the output because the process has been removed.
+
+
+
+
