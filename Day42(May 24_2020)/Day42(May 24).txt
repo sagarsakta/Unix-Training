@@ -1,0 +1,36 @@
+17.1 Introduction to Advanced IPC
+
+In this advanced form of IPC we pass all the file descriptors between processes which are running on the same system with server with their associated names and client process which are running on the same system and associate these names to the servers.
+
+
+17.2 UNIX Domain Sockets
+
+They are used to communicate with the processes which are running on the same system. They don't need any network protocol processing thats why they are very efficient. There is no concept of checksums and sequence number because they make the processing complex.
+
+17.2.1 Naming UNIX Domain Sockets
+
+They are basically used to promote the services. The address format of this Sockets differs from Internet Domain sockets. This sockaddr_un structure is defined under <sys/un.h> .
+
+
+17.3 Unique Connections
+
+ We use may functions for making the unique connections like bind function, listen function and all accept functions. When client request to the server for the further processing and then the server accept the request then the unique connection is created between the client and server.
+
+Three functions which are used to create unique connections between processes which are running on the same system are-
+a.int serv_kisten
+b.int serv_accept
+c.int cli_conn
+
+
+17.4 Passing File Descriptors
+
+It is a that mechanishm which is used to pass the file descriptors between processes. It supports single process to do each and every processing which is used to open a file. 
+
+When we pass an file descriptor from one process to another process we want that passing process and that recieving process to share the same table entry or we can say we are passing the pointer to the file from one process to another.
+
+
+
+
+ 
+
+
