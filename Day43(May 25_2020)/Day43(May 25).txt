@@ -1,0 +1,24 @@
+17.5 An Open Server, Version 1
+
+It is a that program which is run by a process to open one or more files present in the system.This open server returns the file descriptor and it can work with any type of file thats why it is very reliable.
+
+We implement this server as a seperate runnable program because server server can easily be contacted by client.If we want to change the server only a single program will be affect as we seperate the server.If the program is set userID program then it will have additional permission that the client does not have.
+
+In client side there will be a fd-pipe and calls fork and exec functions to invoke the server.There are two ends in the fd-pipe in one end the client send its requests at the other end the server sends its responses.
+
+
+17.6 An Open Server, Version 2
+
+
+Now this open server is designed as a daemon process. Only one server will handle all the clients. This version is more efficient then the previous one because it does not use the complex functions like fork and exec. 
+
+The connection between client and server is UNIX domain socket connection after that the file descriptor is passed between processes. 
+
+The function used in this version are-
+1.serv_listen
+2.serv_accept
+3.cli_conn
+
+
+
+ 
