@@ -1,0 +1,75 @@
+18.1 Introduction to Terminal I/O
+
+In this section we will study about all the terminal functions and all platform-specific additions which are made.The increment in the complixity of Terminal I/O has many several reasons like the use of terminal I/O has been increased. It has one of the longest manuals in the Unix environment.
+
+
+18.2 Overview
+
+There are several modes which are used in the Terminal I/O. 
+1. Canonical mode- It is a mode which is used by default .We use the standard read and write to copy the input to the output . 
+2. Noncanonical mode- It is a that processing of input in which the input is not assembled into lines as it manipulate the entire screen.
+
+
+18.3 Special input Characters
+
+We have several special characters out of which 9 of them to any other value that the user want.
+1.CR- The carriage return character.
+2.DISCARD- The discard character.
+3.DSUSP- The delayed-suspend job control character.
+4.EOF- The end of file character.
+5.EOL-The additional line delimiter character.
+6.EOL2- Another delimiter character.
+7.ERASE- The erase character.
+8.INTR- The interrupt character.
+9.KILL- The kill character.
+10.LNEXT- The literal-next character.
+11.NL- The newline character.
+12.QUIT-The quit character.
+13.REPRINT- The reprint character.
+14.START- The start character.
+15.STATUS- The status request character.
+16.STOP- The stop character.
+17.SUSP- The suspend job control character.
+18.WERASE- The word-erase character.
+
+
+18.4 Getting and Setting Terminal Attributes
+
+There are two functions which are used in the structure to get and set the structure -
+1. tcgetattr
+2. tcsetattr
+These functions takes a pointer to a structure then returns the attributes and returns -1 if file descriptors does not exist.
+
+
+18.5 Terminal Option Flags
+
+There are several flags in which four terminal flags fields the option appears.All the flags specify one or multiple bits .
+There are six delay values which is supported by Linux
+1.BSDLY
+2.CRDLY
+3.FFDLY
+4.NLDLY
+5.TABDLY
+6.VTDLY
+
+
+18.6 stty Command
+
+It is a command which is defined as a interface to the various functions like-
+1.tcgetattr -It fetches attributes.
+2.tcsetattr- It sets attributes.
+3.cfgetispeed- It get input speed.
+4.cfgetospeed- It get output speed.
+5.cfsetispeed- It set input speed.
+6.cfsetospeed-It set output speed.
+
+
+18.7 Baud Rate Functions
+
+Baud rate refers to the bits per second. All terminal devices always use the same baud rate for both input and output.The cfget functions returns the various constants-
+B50,B75,B110, B134, B150, B200, B300, B600, B1200, B1800, B2400, B4800, B9600, B19200, B38400.
+
+
+
+
+
