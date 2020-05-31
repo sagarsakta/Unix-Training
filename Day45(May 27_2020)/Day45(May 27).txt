@@ -1,0 +1,53 @@
+18.8 Line Control Functions
+
+For the terminal devices we use four functions which provides the Line control .The file descriptors is required by these four functions ,these functions are-
+1. tcdrain - It waits for output to be transmitted.
+2. tcflow- It gives control to both input and output.
+3. tcflush- It is used to flush the input buffer or output buffer.
+4. tcsendbreak- It transmits a stream of zero bits.
+
+
+18.9 Terminal Identification
+
+The identification of the controlling terminal is defined by /dev/tty. It will implement a function which is called to dertermine the controlling terminal.
+
+The function named ctermid which has the pointer in its arguement which is not null and the name of its controlling terminal of the process is stored in the array. The term ctermid is defined under <stdio.h>.
+
+
+18.10 Canonical Mode
+
+It is a mode which is used by the terminal driver .It returns the read when a line has been entered .The read will return when the requested number of bytes have been read completely.
+
+We can read only partial line .We don't have to read a complete line, the next read statement is starts when the previous read stopped.
+
+Several terms are used in canonical mode like-
+a.NL
+b.EOF
+c.EOL
+
+
+18.11 Noncanonical Mode
+
+In this type of mode, the data is not concentrated to a particular line.It is a complex mode as we don't have when and how much bits of data we have to return. We can't return more than one value at a time and we don't know how much data we have to read.
+
+Hence, we have to handle the system to return the data which is specified or after the certain amount of time.It use two variables -
+1. MIN- It specifies the minimum number of bytes before read.
+2.TIME- It specifies tenths of a second for data to come.
+
+
+18.12 Terminal Window Size
+
+In this UNIX environment Kernel maintains a structure for every device terminal .This structure contains the row,column,pixel length. 
+
+We can use ioctl standards terms to fetch the current value of the structure. We can also store a new value of this structure using this ioctl.It can also used to generate signals if the current value and new value differs.
+
+
+18.13 termcap, terminfo and curses
+
+termcap meant for terminal capablity which refers to any text file and this file can be read using different set of protocols.As, it contains the various terminals which have the various features of terminal like the information regarding rows and columns.
+
+terminfo and curses are not being used widely currently but they provide a way to perform operations on various terminals.Curses helps in some of the details which is used in the several modes. It is defined specially for the character based terminals.
+
+
+
+
