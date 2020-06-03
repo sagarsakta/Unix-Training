@@ -1,0 +1,39 @@
+19.5 pty Program
+
+Whenever we implement our program using pty , that program is executed in its own session.We wil use pty_fork function the execution of the program in which we will fetch the current values of the structure and pass the function arguement to it.
+After that child calls the execvp to execute the program and the parent is also used to reset the terminal when exit is called.
+
+
+19.6 Using the pty Program
+
+a.In Job control Interaction
+If we run job control in pty like pty ksh , We can execute our programs in this shell and use job control like our login shell.
+For interactive program other than this job control we will use pty cat, it works until we use the job control suspend keyword.
+
+Watching Output of Long Running Programs
+
+We can write pty slowout > file.out &
+When program gives output slowly.
+
+b.Script Programs
+#!/bin/sh
+pty "${SHELL:=/bin/sh}" | tee typescript
+We can see all the relationship between processes by this script.
+
+
+19.7 Advanced Features
+
+There can be two modes used in the Pseudo Terminals-
+
+1.Packet Mode- It is a that mode which learns with the change of states in process. It is enabled by having the streams module pckt .
+This mode differs according to platforms ,works different in each platforms.
+It is a mode which have a goal of informing the process of reading the master when any event occurs in the line discipline module.
+
+2.Remote Mode
+
+There is a command TIOCREMOTE ioctl which is used to set the device to remote mode by issuing this command.In this mode, processing of data which is recieved is regardless of any flag in the termios structure.
+It is a mode which is used for application such as window manager along with the signal generation.
+
+
+
+
