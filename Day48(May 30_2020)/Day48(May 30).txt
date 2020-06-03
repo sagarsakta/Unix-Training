@@ -1,0 +1,31 @@
+19.1 Introduction to Pseudo Terminals
+
+It is a that device driver which is used to provide the the terminal semantics.It provide various functions to create this pseudo terminals .As, we know from previous chapters the terminal line exist between the terminal and program so when these terminal functions used for implementation of program we call it as pty.
+
+
+19.2 Overview
+
+It is defined as a terminal which is used in our program.The working of this terminal has several steps-
+1. At first process opens that terminal master and call fork.
+2.Child will create a new session on the terminal.
+3.Anything written to the master will be the input .
+4.Vice versa is true for the master input so it act as a bidirectional pipe.
+
+
+19.3 Opening Pseudo-Terminal Devices
+
+It is different from other platforms. In this ,applications are not aware that which type of device they are using.
+The function posix_openpt is used as a way to open these pseudo Terminal devices. The arguement oflag is used in this function to specify how the master device to be opened.
+The implementations of this PTY set the ownership of this PTY device to group tty.
+
+
+19.4 pty_fork Function
+
+For creating this pty_fork function we will use the two function named as ptym_open and ptys_open.This pty_fork has several arguements-
+1.ptrfdm- file descriptor is returned through this arguement.
+2.slave_name- the name of slave device stored in this location.
+3.slave_termios- It uses the refrenced structure to initialize the terminal.
+4.slave winsize- used for initializing the window size.
+
+
+
