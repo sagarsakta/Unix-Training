@@ -1,0 +1,10 @@
+Exrercises
+ 
+18.2  Tip establishes a terminal connection to a remote system .It is also used in other UNIX operating system. 
+The tip command used in the implementations are-
+
+tip [-v] [-speed-entry ] (<hostname> | <phone-number> | <device>)
+
+~. - used for exit.
+~# - used to break
+~? - used to list all commands.
