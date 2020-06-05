@@ -1,0 +1,39 @@
+20.1 Introduction to Database Library
+
+In this chapter we will read about several parts of UNIX System interface which is required by a database library.We will implement a multiuser database library of C functions which is used to store records in a database.UNIX system provides a suitable environment for running the multiuser database Systems.
+
+
+20.2 History
+
+There are several database functions which is present in the UNIX system like dbm3 library.But in later phase the BSD developers extended this dbm library and called it ndbm. The implementation of these database functions provides no concept of concurrency.
+
+As, many database functions libraries provide the concurrency controls which is required for multiple process for the updation of database by using locking concept.
+
+
+20.3 The Library
+
+The library which is used in the database functions is ndbm library. As, we discussed the many commercial database system provides the concurrency control mechanism for the updation of the database at the same time.
+
+Implementations have several functions-
+db_open function is used in which two files are created.
+db_store function for storing the new record in the databse.
+db_fetch function for fetching any record from the database by its key.
+db_delete function for delete the record from database by its key.
+
+
+20.4 Implementation Overview
+
+Libraries generally use two files to store the information one is index file and another is data file.
+index file- which contains the actual index value
+data file- it includes pointer to the paticular record.
+
+We will create two files one with the suffix of index and another one with the suffix of data.We will store the key and index .
+
+
+20.5 Centralized or Decentralized
+
+We can implement the database library function in two ways one is centralized and another one is Decentralized
+Centralized is a single process which is known as the database manager and it should be the single process which can full access the database.
+Decentralized have their each function which can apply the concept of locking for the concurrency control.
+
+
