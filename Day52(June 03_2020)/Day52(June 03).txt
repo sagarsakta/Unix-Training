@@ -1,0 +1,41 @@
+20.6 Concurrency
+
+As we know for implementing the database function we create two files one is index and other one is data but these to files require the locking interaction with each other for the concurrency. 
+We will handle this locking in several ways-
+a.Coarse-Grained Locking 
+In this type of locking we use one file as a lock for the database and the caller which is set for the implementation to obtain a lock before implementation.
+b.Fine-Grained Locking
+It is a enhanced version of Coarse-Grained Locking which allow more concurrency.
+
+
+20.7 Building the Library
+
+The library also contains of two files
+a.  public C header
+b. C source file
+We will use some of our common used function in this library.
+Static Library can be build using-
+gcc -I ../include =wall -c db.c
+
+
+20.8 Source Code
+
+We Will define various functions and applications  under apue_db.h which calls library.
+
+We will number the lines as the length of the code is very long,this makes easier to link the source code and we can make the brief description of the code just below the code.
+
+We will not number the blank lines.We will include all the functions of the C source file in a single file.
+We can also hide the private function by declaring them static. 
+
+
+20.9 Performance
+
+The execution of code takes two command line arguements 
+a. Number of children to create 
+b.The number of records for each child to write.
+
+The number of operations which are performed on the database is counted by the cnt_xxx .
+
+Single process Results- It is a process when a single process run .The concept of Advisory locking is used in the columns.
+
+MUti-process Results- The concept of coarse-grained locking and fine-grained locking is used for increasing the concurrency. 
