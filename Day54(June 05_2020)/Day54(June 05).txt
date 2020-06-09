@@ -1,0 +1,73 @@
+21.1 Introduction to Communicating with Network Printer
+
+These are the network printers which works on several computers through Ethernet.In this chapter we will define types of program-
+a.a print spooler daemon which sends jobs to the printer
+b.Command to submit print jobs to the spooler daemon.
+
+21.2 The Internet Printing Protocol
+
+All the protocols for the communication are specified under Internet Printing Protocol for network printing.Printer can request for many computers for services. and those computers need not to be located on the same network for the service. 
+
+Several documents are listed to define the procedure of Internet Printing Protocol-
+a.RFC2567-Used for designing IPP.
+b.RFC2568-It is a type of protocol.
+c.RFC2911-It is a model and Semantics.
+d.RFC2910-For Transport.
+e.RFC3196- For the implementor
+
+
+21.3 The Hypertext Transfer Protocol
+
+It is known as the request response protocol.
+There are several parts which message includes 
+a. Start line- This line defines the method which indicates the operation which is requested by the client.
+b.Header line- It specify the attributes which describes the format and length of the body.
+c.Blank Line- The blank space inside the message.
+
+ Example -Print request
+POST /ipp HTTP/1.1 -M
+Content-length :21931 -M
+Host: phaser85647-M
+
+Response to request
+HTTP/1.1 200 OK -M
+Content-Type:application/ipp -M
+Expires THU, 10 JAN  2008/ 11:59:00 GMT -M
+SErver : Allegro Software-Rompager/4.34 -M
+
+
+21.4 Printer Spooling
+
+It is a type of specification  according to which we are developing our programs. We are developing a spooling system to reduce the problem of multiuser access to a single resource.
+
+We have the print command that reads a file and send that file to the printer spooler . We use the thread concept .By using multiple threads we can divide the work which have to be implement.
+
+Several attributes required for spooling-
+a. print command.
+b.file to print
+c.config file
+d.printd printer spooler
+e.printer
+f.files
+
+
+21.5 Source Code
+
+The source code consist of 5 different files
+a. ipp.h- It is a header file which defines IPP.
+
+b.print.h- It is a header containing constants.
+
+c.util.c- It is a utility routines used by two programs.
+
+d.print.c- The C source file for printing the file.
+
+e. printd.c- The C source file for the printing spooling daemon.
+
+
+
+
+ 
+
+
+
